@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+import Home from '../components/Home.astro';
+import PressBody from '../components/PressBody.astro';
+import LegalBody from '../components/LegalBody.astro';
+import routes from '../data/routes.json';
+import { getCopy, localeMeta } from '../lib/i18n.mjs';
+
+export function getStaticPaths() {
+  const paths = [];
+  for (const [pageKey, byLocale] of Object.entries(routes)) {
+    for (const [lang, path] of Object.entries(byLocale)) {
+      const slug = path.replace(/^\/|\/$/g, '');
+      paths.push({ params: { slug: slug || undefined }, props: { pageKey, lang } });
+    }
+  }
+  return paths;
+}
+
+const { pageKey, lang } = Astro.props;
+const copy = getCopy(lang);
+const locale = localeMeta(lang);
+
+const legalSlug = { privacy: 'privacy', terms: 'terms', deletion: 'data-deletion' }[pageKey];
+
+const titles = {
+  press: () =>
+    lang === 'en'
+      ? 'Press kit — Tap & Build'
+      : lang === 'es'
+        ? 'Prensa — Tap & Build'
+        : lang === 'de'
+          ? 'Presse — Tap & Build'
+          : lang === 'ru'
+            ? 'Пресса — Tap & Build'
+            : 'Imprensa — Tap & Build',
+};
+
+const meta = legalSlug ? copy.legalMeta[pageKey] : null;
+const title = meta?.title ?? titles.press?.() ?? copy.meta.title;
+const description = meta?.description ?? copy.meta.description;
+---
+
+<Base lang={lang} copy={copy} pageKey={pageKey} title={title} description={description}>
+  {pageKey === 'home' && <Home copy={copy} lang={lang} />}
+  {pageKey === 'press' && <PressBody copy={copy} lang={lang} />}
+  {legalSlug && <LegalBody lang={lang} slug={legalSlug} />}
+</Base>

@@ -1,0 +1,37 @@
+{
+  "home": {
+    "en": "/",
+    "es": "/es/",
+    "de": "/de/",
+    "ru": "/ru/",
+    "pt": "/pt/"
+  },
+  "press": {
+    "en": "/prensa/",
+    "es": "/es/prensa/",
+    "de": "/de/presse/",
+    "ru": "/ru/press/",
+    "pt": "/pt/imprensa/"
+  },
+  "privacy": {
+    "en": "/privacy/",
+    "es": "/es/privacidad/",
+    "de": "/de/datenschutz/",
+    "ru": "/ru/privacy/",
+    "pt": "/pt/privacidade/"
+  },
+  "terms": {
+    "en": "/terms/",
+    "es": "/es/terminos/",
+    "de": "/de/nutzungsbedingungen/",
+    "ru": "/ru/terms/",
+    "pt": "/pt/termos/"
+  },
+  "deletion": {
+    "en": "/data-deletion/",
+    "es": "/es/borrado-de-datos/",
+    "de": "/de/datenloeschung/",
+    "ru": "/ru/data-deletion/",
+    "pt": "/pt/exclusao-de-dados/"
+  }
+}

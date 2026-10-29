@@ -1,0 +1,175 @@
+{
+  "lang": "pt",
+  "meta": {
+    "title": "Tap & Build: idle de fábrica para Android",
+    "description": "Toque, construa e automatize. Jogo idle de fábrica grátis para Android, com progresso offline, prestígio e um mercado onde você investe em outros jogadores."
+  },
+  "nav": {
+    "how": "Como jogar",
+    "themes": "Temas",
+    "press": "Imprensa",
+    "download": "Baixar",
+    "themeButton": "Trocar tema",
+    "language": "Idioma",
+    "mainLabel": "Principal",
+    "skip": "Pular para o conteúdo"
+  },
+  "hero": {
+    "eyebrow": "Idle de fábrica · Android",
+    "title": ["Toque.", "Construa.", "Relaxe."],
+    "lead": "Você começa com uma esteira e termina com uma fábrica que não dorme. Grátis, sem cadastro, e continua produzindo enquanto você está fora.",
+    "cta": "Jogar grátis",
+    "ctaNote": "Android · grátis · progresso offline",
+    "secondary": "Ver como se joga",
+    "facts": [
+      { "value": "Offline", "label": "progresso enquanto você não joga" },
+      { "value": "{n}", "label": "temas de cor" },
+      { "value": "0", "label": "cadastros para começar" }
+    ]
+  },
+  "tour": {
+    "title": "O jogo em quatro telas",
+    "tabs": [
+      {
+        "id": "tap",
+        "label": "Toque e produza",
+        "caption": "Cada toque acelera a linha. Quando cansar de tocar, os gerentes assumem."
+      },
+      {
+        "id": "grid",
+        "label": "Compre máquinas",
+        "caption": "Você compra máquinas, sobe o nível e elas produzem sozinhas."
+      },
+      {
+        "id": "prestige",
+        "label": "Reinicie e ascenda",
+        "caption": "Você recomeça e mantém multiplicadores permanentes."
+      },
+      {
+        "id": "market",
+        "label": "Invista em jogadores",
+        "caption": "Você compra ações de fábricas reais e recebe quando elas produzem."
+      }
+    ]
+  },
+  "screens": {
+    "cash": "Caixa",
+    "perSec": "por segundo",
+    "machines": "máquinas",
+    "managers": "gerentes",
+    "pace": "ritmo",
+    "rowBonus": "Fileira completa · +25%",
+    "prestige": "Prestígio",
+    "permanent": "multiplicador permanente",
+    "ascend": "Ascender",
+    "market": "Mercado",
+    "shares": "2 ações suas",
+    "tap": "Tocar",
+    "tabMachines": "Máquinas",
+    "tabUpgrades": "Melhorias",
+    "machine1": "Esteira",
+    "machine2": "Linha de montagem",
+    "machine3": "Braço robótico",
+    "machine4": "Armazém",
+    "machine5": "Zona industrial",
+    "explore": "Explorar",
+    "following": "Seguindo",
+    "invest": "Investir",
+    "search": "Buscar jogadores...",
+    "vault": "Cofre",
+    "cps": "CPS",
+    "dur": "DURAÇÃO",
+    "ret": "RETORNO"
+  },
+  "steps": {
+    "title": "Como se joga",
+    "lead": "Três coisas, nesta ordem. Depois roda sozinho.",
+    "items": [
+      {
+        "title": "Toque para começar",
+        "text": "A esteira produz a cada toque. É o único trabalho manual que você tem."
+      },
+      {
+        "title": "Automatize",
+        "text": "Você compra máquinas e gerentes. A fábrica segue produzindo com o app fechado."
+      },
+      {
+        "title": "Ascenda",
+        "text": "Você reinicia a fábrica em troca de multiplicadores permanentes. Cada volta é mais rápida."
+      }
+    ]
+  },
+  "themesSection": {
+    "title": "Os mesmos temas do jogo",
+    "lead": "O jogo tem {n} paletas. Estas oito são as mais diferentes. Toque em uma e o site inteiro muda com ela.",
+    "note": "Quatro vêm incluídas; o resto libera com os pacotes ou convidando amigos.",
+    "tiers": {
+      "free": "Incluído",
+      "supporter": "Pacote Supporter",
+      "builder": "Pacote Builder",
+      "referral": "Por convite"
+    }
+  },
+  "finalCta": {
+    "title": "Sua fábrica está esperando",
+    "text": "Grátis no Android. Sem cadastro, sem tutorial eterno.",
+    "cta": "Baixar no Google Play"
+  },
+  "footer": {
+    "tagline": "Jogo idle de fábrica para Android.",
+    "links": {
+      "press": "Imprensa",
+      "privacy": "Privacidade",
+      "terms": "Termos",
+      "deletion": "Exclusão de dados"
+    },
+    "rights": "Todos os direitos reservados."
+  },
+  "pressPage": {
+    "title": "Imprensa",
+    "lead": "Tudo o que você precisa para escrever, gravar ou cobrir Tap & Build. Se faltar algo, peça: a gente responde.",
+    "factsTitle": "Ficha técnica",
+    "facts": [
+      { "label": "Jogo", "value": "Tap & Build: Idle Factory Tycoon" },
+      { "label": "Plataforma", "value": "Android (Google Play)" },
+      { "label": "Preço", "value": "Grátis, com compras opcionais" },
+      { "label": "Pacote", "value": "com.tapandbuild.game" },
+      { "label": "Temas", "value": "30 paletas desbloqueáveis" },
+      { "label": "Contato", "value": "support@tapandbuild.com" }
+    ],
+    "differentTitle": "O que ele tem de diferente",
+    "different": [
+      {
+        "title": "Um mercado entre jogadores",
+        "text": "Os jogadores compram ações das fábricas uns dos outros e recebem quando elas produzem. A economia é movida por eles, não por um bot."
+      },
+      {
+        "title": "Grade com sinergias",
+        "text": "As máquinas ficam numa grade e as fileiras completas dão bônus. Não é só acumular números."
+      },
+      {
+        "title": "30 temas",
+        "text": "Cada jogador escolhe como a fábrica dele aparece, entre 30 paletas."
+      }
+    ],
+    "assetsTitle": "Material",
+    "assetsText": "Capturas atualizadas, ícone em alta e logo: peça por e-mail e mandamos no mesmo dia. Preferimos mandar a versão mais nova a deixar uma antiga publicada.",
+    "contactTitle": "Contato",
+    "contactText": "Para imprensa, colaborações ou uma chave de análise:",
+    "backHome": "Voltar ao início"
+  },
+  "legalMeta": {
+    "privacy": {
+      "title": "Privacidade — Tap & Build",
+      "description": "Quais dados o Tap & Build trata, o que não fazemos e como apagar."
+    },
+    "terms": {
+      "title": "Termos de Serviço — Tap & Build",
+      "description": "As condições que valem quando você joga Tap & Build."
+    },
+    "deletion": {
+      "title": "Exclusão de dados — Tap & Build",
+      "description": "Como pedir a exclusão dos seus dados do Tap & Build."
+    }
+  }
+}

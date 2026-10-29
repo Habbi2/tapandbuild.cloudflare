@@ -2,12 +2,13 @@
 import themesData from '../data/themes.json';
 import { buildTokens } from '../lib/tokens.mjs';
 import { storeLink } from '../lib/links.mjs';
+import { LOCALES, pathFor } from '../lib/i18n.mjs';
 
-const { copy, lang, altPath, home = copy.path } = Astro.props;
+const { copy, lang, pageKey = 'home' } = Astro.props;
 
-const base = copy.paths.home;
-const pressPath = copy.paths.press;
-const altLang = lang === 'es' ? 'en' : 'es';
+const home = pathFor('home', lang);
+const base = home.endsWith('/') ? home : `${home}/`;
+const pressPath = pathFor('press', lang);
 
 const chips = themesData.themes.map((theme) => {
   const { tokens } = buildTokens(theme);
@@ -18,27 +19,63 @@ const chips = themesData.themes.map((theme) => {
   };
 });
 
+const languages = LOCALES.map((locale) => ({
+  ...locale,
+  href: pathFor(pageKey, locale.code),
+  current: locale.code === lang,
+}));
+
+const current = languages.find((item) => item.current) ?? languages[0];
 const download = storeLink({ lang, medium: 'nav', campaign: 'home' });
 ---
 
 <header class="nav">
   <div class="wrap nav__inner">
-    <a class="brand" href={base} aria-label={copy.nav.download === 'Descargar' ? 'Tap & Build, inicio' : 'Tap & Build, home'}>
+    <a class="brand" href={base} aria-label="Tap & Build">
       <span class="brand__mark" aria-hidden="true">TB</span>
       <span>Tap &amp; Build</span>
     </a>
 
-    <nav class="nav__links" aria-label={lang === 'es' ? 'Principal' : 'Main'}>
+    <nav class="nav__links" aria-label={copy.nav.mainLabel}>
       <a href={`${base}#juego`}>{copy.nav.how}</a>
       <a href={`${base}#temas`}>{copy.nav.themes}</a>
       <a href={pressPath}>{copy.nav.press}</a>
     </nav>
 
     <div class="nav__actions">
-      <a class="lang-link" href={altPath} hreflang={altLang} lang={altLang} aria-label={copy.nav.language}>
-        <span class="lang-long">{copy.nav.language}</span>
-        <span class="lang-short">{altLang.toUpperCase()}</span>
-      </a>
+      <div class="theme-wrap">
+        <button
+          class="icon-btn lang-btn"
+          type="button"
+          data-lang-toggle
+          aria-expanded="false"
+          aria-controls="lang-pop"
+          aria-label={copy.nav.language}
+          title={copy.nav.language}
+        >
+          {current.short}
+        </button>
+
+        <div class="theme-pop lang-pop" id="lang-pop" hidden>
+          <p class="theme-pop__title">{copy.nav.language}</p>
+          <ul class="lang-list">
+            {languages.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  hreflang={item.code}
+                  lang={item.code}
+                  class:list={['lang-item', item.current && 'is-current']}
+                  aria-current={item.current ? 'true' : undefined}
+                >
+                  <span>{item.label}</span>
+                  <span class="lang-item__code">{item.short}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
 
       <div class="theme-wrap">
         <button
@@ -85,6 +122,18 @@ const download = storeLink({ lang, medium: 'nav', campaign: 'home' });
 <script>
   const KEY = 'tb-theme';
 
+  function closeAll(except) {
+    for (const id of ['theme-pop', 'lang-pop']) {
+      if (id === except) continue;
+      const el = document.getElementById(id);
+      if (el && !el.hidden) {
+        el.hidden = true;
+        const btn = document.querySelector(`[aria-controls="${id}"]`);
+        btn?.setAttribute('aria-expanded', 'false');
+      }
+    }
+  }
+
   function applyTheme(slug) {
     document.documentElement.dataset.theme = slug;
     try {
@@ -102,10 +151,9 @@ const download = storeLink({ lang, medium: 'nav', campaign: 'home' });
     }
   }
 
-  // Marca el tema activo al cargar (el script del head ya lo aplicó).
-  const current = document.documentElement.dataset.theme || 'cream-vanilla';
+  const currentTheme = document.documentElement.dataset.theme || 'cream-vanilla';
   document.querySelectorAll('[data-theme-set]').forEach((btn) => {
-    btn.setAttribute('aria-pressed', String(btn.dataset.themeSet === current));
+    btn.setAttribute('aria-pressed', String(btn.dataset.themeSet === currentTheme));
   });
 
   document.addEventListener('click', (event) => {
@@ -114,38 +162,31 @@ const download = storeLink({ lang, medium: 'nav', campaign: 'home' });
     const chip = target.closest('[data-theme-set]');
     if (chip) {
       applyTheme(chip.dataset.themeSet);
-      const pop = document.getElementById('theme-pop');
-      if (pop && !pop.hidden) {
-        pop.hidden = true;
-        document.querySelector('[data-theme-toggle]')?.setAttribute('aria-expanded', 'false');
-      }
+      closeAll();
       return;
     }
 
-    const toggle = target.closest('[data-theme-toggle]');
-    if (toggle) {
-      const pop = document.getElementById('theme-pop');
-      if (pop) {
-        pop.hidden = !pop.hidden;
-        toggle.setAttribute('aria-expanded', String(!pop.hidden));
-      }
+    for (const [attr, id] of [
+      ['data-theme-toggle', 'theme-pop'],
+      ['data-lang-toggle', 'lang-pop'],
+    ]) {
+      const toggle = target.closest(`[${attr}]`);
+      if (!toggle) continue;
+      const pop = document.getElementById(id);
+      if (!pop) return;
+      const willOpen = pop.hidden;
+      closeAll(willOpen ? id : undefined);
+      pop.hidden = !willOpen;
+      toggle.setAttribute('aria-expanded', String(willOpen));
       return;
     }
 
-    const pop = document.getElementById('theme-pop');
-    if (pop && !pop.hidden && !target.closest('#theme-pop')) {
-      pop.hidden = true;
-      document.querySelector('[data-theme-toggle]')?.setAttribute('aria-expanded', 'false');
-    }
+    if (!target.closest('.theme-pop')) closeAll();
   });
 
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
-    const pop = document.getElementById('theme-pop');
-    if (pop && !pop.hidden) {
-      pop.hidden = true;
-      document.querySelector('[data-theme-toggle]')?.setAttribute('aria-expanded', 'false');
-      document.querySelector('[data-theme-toggle]')?.focus();
-    }
+    closeAll();
+    document.querySelector('[aria-expanded="true"]')?.blur();
   });
 </script>

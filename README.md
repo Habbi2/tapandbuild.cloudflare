@@ -1,7 +1,7 @@
 # Tap & Build — web
 
 Sitio oficial de **Tap & Build: Idle Factory Tycoon** (Android).
-Astro estático, dos idiomas, y un sistema de temas que sale del código del juego.
+Astro estático, cinco idiomas, y un sistema de temas que sale del código del juego.
 
 ![Home](docs/preview-home.png)
 
@@ -37,6 +37,8 @@ scripts/
 src/
   data/
     site.json          # nombre, paquete, URL de la store
+    locales.json       # idiomas del sitio
+    routes.json        # ruta de cada página en cada idioma
     themes.json        # GENERADO: 8 temas + cuántos hay en el juego
     copy/{es,en}.json  # todo el texto del sitio
   lib/
@@ -48,12 +50,8 @@ src/
   content/legal/       # privacy, terms y data-deletion (heredados, ver abajo)
   components/          # Nav, Device (tour), ThemeGallery, PressBody, Footer
   pages/
-    index.astro        # EN  /
-    es/index.astro     # ES  /es/
+    [...slug].astro    # las 25 páginas: 5 idiomas x 5 tipos, desde routes.json
     go.astro           # /go  link-in-bio + intent:// + código de invitación
-    prensa.astro       # /prensa       es/prensa.astro
-    privacy.astro, terms.astro, data-deletion.astro
-    es/privacidad.astro, es/terminos.astro
 public/
   _headers             # seguridad y caché (Cloudflare Pages)
   _redirects           # /invite/* -> /go/ y 301 de las URLs viejas
@@ -74,6 +72,15 @@ public/
 | `--up` `--on-up` `--down` | verde/rojo accesibles y su tinta |
 
 El default es **Cream Vanilla** (el default real del juego). `?theme=slug` fuerza un tema.
+
+## Idiomas
+
+EN (raíz), ES, DE, RU y PT-BR. Las rutas viven en `src/data/routes.json`: agregar un idioma
+es sumar su código a `locales.json`, su entrada en `routes.json` y un `src/data/copy/xx.json`.
+El hreflang, el canonical y el selector de idioma salen de ahí solos.
+
+DE tiene las legales traducidas. RU y PT las muestran en inglés con un aviso de cuál es la
+versión vinculante (pendiente de traducir si el mercado lo justifica).
 
 Para agregar un tema: sumarlo a `SELECTION` en `sync-themes.mjs`, correr
 `npm run sync:themes && npm run check`, y si pasa AA aparece solo en el switcher y la galería.

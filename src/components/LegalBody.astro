@@ -1,0 +1,21 @@
+---
+/// Renderiza el cuerpo legal de un idioma. Si no hay traducción, usa el inglés
+/// y antepone un aviso que dice cuál es la versión vinculante.
+const { lang, slug } = Astro.props;
+
+const files = import.meta.glob('/src/content/legal/**/*.html', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+});
+
+const key = (code) => `/src/content/legal/${code}/${slug}.html`;
+const translated = files[key(lang)];
+const body = translated ?? files[key('en')] ?? '<p>Missing content.</p>';
+const notice = translated ? null : files[`/src/content/legal/${lang}/notice.html`];
+---
+
+<div class="wrap">
+  {notice && <div class="legal-notice" set:html={notice} />}
+  <article class="legal" set:html={body} />
+</div>

@@ -1,8 +1,8 @@
 ---
 import site from '../data/site.json';
+import { pathFor } from '../lib/i18n.mjs';
 
 const { copy, lang } = Astro.props;
-const base = copy.paths.home;
 const year = new Date().getFullYear();
 ---
 
@@ -10,7 +10,7 @@ const year = new Date().getFullYear();
   <div class="wrap">
     <div class="footer__inner">
       <div>
-        <a class="brand" href={base}>
+        <a class="brand" href={pathFor('home', lang)}>
           <span class="brand__mark" aria-hidden="true">TB</span>
           <span>Tap &amp; Build</span>
         </a>
@@ -18,10 +18,10 @@ const year = new Date().getFullYear();
       </div>
 
       <nav class="footer__links" aria-label="Legal">
-        <a href={copy.paths.press}>{copy.footer.links.press}</a>
-        <a href={copy.paths.privacy}>{copy.footer.links.privacy}</a>
-        <a href={copy.paths.terms}>{copy.footer.links.terms}</a>
-        <a href={copy.paths.deletion}>{copy.footer.links.deletion}</a>
+        <a href={pathFor('press', lang)}>{copy.footer.links.press}</a>
+        <a href={pathFor('privacy', lang)}>{copy.footer.links.privacy}</a>
+        <a href={pathFor('terms', lang)}>{copy.footer.links.terms}</a>
+        <a href={pathFor('deletion', lang)}>{copy.footer.links.deletion}</a>
       </nav>
     </div>
 

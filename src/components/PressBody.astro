@@ -1,4 +1,6 @@
 ---
+import { pathFor } from '../lib/i18n.mjs';
+
 const { copy, lang } = Astro.props;
 const p = copy.pressPage;
 ---
@@ -49,7 +51,7 @@ const p = copy.pressPage;
     </div>
 
     <p style="margin-top: 32px;">
-      <a href={copy.paths.home} class="bio__link" style="color: var(--action);">
+      <a href={pathFor("home", lang)} class="bio__link" style="color: var(--action);">
         ← {p.backHome}
       </a>
     </p>

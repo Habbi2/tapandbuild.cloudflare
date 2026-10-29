@@ -4,33 +4,36 @@ import '../styles/themes.css';
 import site from '../data/site.json';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import { alternates, pathFor } from '../lib/i18n.mjs';
 
 const {
   lang,
   copy,
-  path = copy.path,
+  pageKey = 'home',
   title = copy.meta.title,
   description = copy.meta.description,
   bare = false,
   noindex = false,
-  altPath: altPathProp,
   ogImage: ogImageProp = '/og.png',
+  path: pathProp,
 } = Astro.props;
 
 const origin = `https://${site.domain}`;
-const canonical = new URL(path, origin).href;
+const pagePath = pathProp ?? pathFor(pageKey, lang);
+const canonical = new URL(pagePath, origin).href;
+const alts = (pathProp ? [] : alternates(pageKey)).map((alt) => ({
+  code: alt.code,
+  url: new URL(alt.path, origin).href,
+}));
+const defaultUrl = new URL(pathFor(pageKey, 'en'), origin).href;
 
-// Camino equivalente en el otro idioma: /es/prensa <-> /prensa
-const altLang = lang === 'es' ? 'en' : 'es';
-const defaultAlt =
-  lang === 'es'
-    ? path.replace(/^\/es/, '') || '/'
-    : path === '/'
-      ? '/es/'
-      : `/es${path}`;
-// `altPath={null}` omite el hreflang alterno (páginas sin par traducido).
-const altPath = altPathProp === undefined ? defaultAlt : altPathProp;
-const altUrl = altPath ? new URL(altPath, origin).href : null;
+const ogLocales = {
+  en: 'en_US',
+  es: 'es_AR',
+  de: 'de_DE',
+  ru: 'ru_RU',
+  pt: 'pt_BR',
+};
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -58,9 +61,8 @@ const ogImage = new URL(ogImageProp, origin).href;
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex, follow" />}
 
-    <link rel="alternate" hreflang={lang} href={canonical} />
-    {altUrl && <link rel="alternate" hreflang={altLang} href={altUrl} />}
-    <link rel="alternate" hreflang="x-default" href={lang === 'en' ? canonical : (altUrl ?? canonical)} />
+    {alts.map((alt) => <link rel="alternate" hreflang={alt.code} href={alt.url} />)}
+    <link rel="alternate" hreflang="x-default" href={defaultUrl} />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.name} />
@@ -70,11 +72,11 @@ const ogImage = new URL(ogImageProp, origin).href;
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta name="twitter:image" content={ogImage} />
-    <meta property="og:locale" content={lang === 'es' ? 'es_AR' : 'en_US'} />
+    <meta property="og:locale" content={ogLocales[lang] ?? 'en_US'} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
 
     <meta name="theme-color" content="#FCF5ED" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -86,7 +88,6 @@ const ogImage = new URL(ogImageProp, origin).href;
     <script is:inline>
       (function () {
         try {
-          // ?theme=slug permite preview y links con tema fijo.
           var fromUrl = new URLSearchParams(location.search).get('theme');
           var saved = localStorage.getItem('tb-theme');
           if (fromUrl) {
@@ -100,8 +101,8 @@ const ogImage = new URL(ogImageProp, origin).href;
     </script>
   </head>
   <body>
-    <a class="skip" href="#contenido">{lang === 'es' ? 'Saltear al contenido' : 'Skip to content'}</a>
-    {!bare && <Nav copy={copy} lang={lang} altPath={altPath} />}
+    <a class="skip" href="#contenido">{copy.nav.skip}</a>
+    {!bare && <Nav copy={copy} lang={lang} pageKey={pageKey} />}
     <main id="contenido">
       <slot />
     </main>

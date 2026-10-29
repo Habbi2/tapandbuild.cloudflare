@@ -1335,3 +1335,72 @@ svg {
   filter: none;
   opacity: 1;
 }
+
+/* --------------------------------------------------------------------------
+   Selector de idioma + aviso legal
+   -------------------------------------------------------------------------- */
+
+.lang-btn {
+  width: auto;
+  min-width: 40px;
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.lang-pop {
+  width: 210px;
+}
+
+.lang-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.lang-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.lang-item:hover {
+  background: color-mix(in oklab, var(--text) 6%, transparent);
+}
+
+.lang-item.is-current {
+  background: color-mix(in oklab, var(--primary) 16%, transparent);
+  box-shadow: inset 2px 0 0 var(--action);
+}
+
+.lang-item__code {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.legal-notice {
+  max-width: 74ch;
+  margin-top: 44px;
+  padding: 14px 18px;
+  border: 2px solid var(--border);
+  border-left: 4px solid var(--action);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.legal-notice p {
+  margin: 0;
+}

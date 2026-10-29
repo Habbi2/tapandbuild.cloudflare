@@ -11,7 +11,9 @@
     "press": "Prensa",
     "download": "Descargar",
     "themeButton": "Cambiar tema",
-    "language": "English"
+    "language": "English",
+    "mainLabel": "Principal",
+    "skip": "Saltear al contenido"
   },
   "hero": {
     "eyebrow": "Idle de fábrica · Android",
@@ -194,5 +196,19 @@
     "contactTitle": "Contacto",
     "contactText": "Para prensa, colaboraciones o una clave de reseña:",
     "backHome": "Volver al inicio"
+  },
+  "legalMeta": {
+    "privacy": {
+      "title": "Política de Privacidad — Tap & Build",
+      "description": "Qué datos trata Tap & Build, qué no hacemos y cómo borrarlos."
+    },
+    "terms": {
+      "title": "Términos de Servicio — Tap & Build",
+      "description": "Las condiciones que aplican al jugar Tap & Build."
+    },
+    "deletion": {
+      "title": "Borrado de datos — Tap & Build",
+      "description": "Cómo pedir el borrado de tus datos de Tap & Build."
+    }
   }
 }

@@ -1,0 +1,7 @@
+[
+  { "code": "en", "label": "English", "short": "EN", "htmlLang": "en" },
+  { "code": "es", "label": "Español", "short": "ES", "htmlLang": "es" },
+  { "code": "de", "label": "Deutsch", "short": "DE", "htmlLang": "de" },
+  { "code": "ru", "label": "Русский", "short": "RU", "htmlLang": "ru" },
+  { "code": "pt", "label": "Português", "short": "PT", "htmlLang": "pt-BR" }
+]

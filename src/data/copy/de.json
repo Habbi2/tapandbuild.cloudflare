@@ -1,0 +1,175 @@
+{
+  "lang": "de",
+  "meta": {
+    "title": "Tap & Build: Idle-Fabrik für Android",
+    "description": "Tippen, bauen, automatisieren. Kostenloses Idle-Fabrikspiel für Android mit Offline-Fortschritt, Prestige und einem Markt, in dem du in andere Spieler investierst."
+  },
+  "nav": {
+    "how": "Spielprinzip",
+    "themes": "Themes",
+    "press": "Presse",
+    "download": "Herunterladen",
+    "themeButton": "Theme wechseln",
+    "language": "Sprache",
+    "mainLabel": "Hauptmenü",
+    "skip": "Zum Inhalt springen"
+  },
+  "hero": {
+    "eyebrow": "Idle-Fabrik · Android",
+    "title": ["Tippen.", "Bauen.", "Entspannen."],
+    "lead": "Du fängst mit einem Förderband an und endest mit einer Fabrik, die nie schläft. Kostenlos, ohne Anmeldung, und sie produziert weiter, während du weg bist.",
+    "cta": "Gratis spielen",
+    "ctaNote": "Android · kostenlos · Offline-Fortschritt",
+    "secondary": "So wird gespielt",
+    "facts": [
+      { "value": "Offline", "label": "Fortschritt, während du weg bist" },
+      { "value": "{n}", "label": "Farbschemata" },
+      { "value": "0", "label": "Anmeldungen nötig" }
+    ]
+  },
+  "tour": {
+    "title": "Das Spiel in vier Bildschirmen",
+    "tabs": [
+      {
+        "id": "tap",
+        "label": "Tippen und produzieren",
+        "caption": "Jeder Tipp beschleunigt das Band. Wenn du nicht mehr tippen willst, übernehmen Manager."
+      },
+      {
+        "id": "grid",
+        "label": "Maschinen kaufen",
+        "caption": "Du kaufst Maschinen, levelst sie hoch und sie produzieren von allein."
+      },
+      {
+        "id": "prestige",
+        "label": "Zurücksetzen und aufsteigen",
+        "caption": "Du startest neu und behältst permanente Multiplikatoren."
+      },
+      {
+        "id": "market",
+        "label": "In Spieler investieren",
+        "caption": "Du kaufst Anteile an echten Fabriken und wirst bezahlt, wenn sie produzieren."
+      }
+    ]
+  },
+  "screens": {
+    "cash": "Kasse",
+    "perSec": "pro Sekunde",
+    "machines": "Maschinen",
+    "managers": "Manager",
+    "pace": "Tempo",
+    "rowBonus": "Volle Reihe · +25%",
+    "prestige": "Prestige",
+    "permanent": "permanenter Multiplikator",
+    "ascend": "Aufsteigen",
+    "market": "Markt",
+    "shares": "2 Anteile",
+    "tap": "Tippen",
+    "tabMachines": "Maschinen",
+    "tabUpgrades": "Upgrades",
+    "machine1": "Förderband",
+    "machine2": "Montagelinie",
+    "machine3": "Roboterarm",
+    "machine4": "Lager",
+    "machine5": "Industriezone",
+    "explore": "Entdecken",
+    "following": "Gefolgt",
+    "invest": "Investieren",
+    "search": "Spieler suchen...",
+    "vault": "Vault",
+    "cps": "CPS",
+    "dur": "DAUER",
+    "ret": "REND"
+  },
+  "steps": {
+    "title": "So wird gespielt",
+    "lead": "Drei Dinge, in dieser Reihenfolge. Danach läuft es allein.",
+    "items": [
+      {
+        "title": "Tippen zum Start",
+        "text": "Das Band produziert bei jedem Tipp. Das ist die einzige Handarbeit, die du hast."
+      },
+      {
+        "title": "Automatisieren",
+        "text": "Du kaufst Maschinen und Manager. Die Fabrik läuft auch bei geschlossener App weiter."
+      },
+      {
+        "title": "Aufsteigen",
+        "text": "Du setzt die Fabrik gegen permanente Multiplikatoren zurück. Jede Runde ist schneller."
+      }
+    ]
+  },
+  "themesSection": {
+    "title": "Dieselben Themes wie im Spiel",
+    "lead": "Das Spiel hat {n} Paletten. Diese acht sind die unterschiedlichsten. Tippe eine an und die ganze Seite wechselt mit.",
+    "note": "Vier sind enthalten; der Rest kommt mit den Packs oder durch Einladungen.",
+    "tiers": {
+      "free": "Enthalten",
+      "supporter": "Supporter-Paket",
+      "builder": "Builder-Paket",
+      "referral": "Nur per Einladung"
+    }
+  },
+  "finalCta": {
+    "title": "Deine Fabrik wartet",
+    "text": "Kostenlos auf Android. Ohne Anmeldung, ohne endloses Tutorial.",
+    "cta": "Bei Google Play holen"
+  },
+  "footer": {
+    "tagline": "Idle-Fabrikspiel für Android.",
+    "links": {
+      "press": "Presse",
+      "privacy": "Datenschutz",
+      "terms": "Nutzungsbedingungen",
+      "deletion": "Daten löschen"
+    },
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "pressPage": {
+    "title": "Presse",
+    "lead": "Alles, was du zum Schreiben, Aufnehmen oder Berichten über Tap & Build brauchst. Wenn etwas fehlt: frag uns, wir antworten.",
+    "factsTitle": "Fakten",
+    "facts": [
+      { "label": "Spiel", "value": "Tap & Build: Idle Factory Tycoon" },
+      { "label": "Plattform", "value": "Android (Google Play)" },
+      { "label": "Preis", "value": "Kostenlos, mit optionalen Käufen" },
+      { "label": "Paket", "value": "com.tapandbuild.game" },
+      { "label": "Themes", "value": "30 freischaltbare Paletten" },
+      { "label": "Kontakt", "value": "support@tapandbuild.com" }
+    ],
+    "differentTitle": "Was es anders macht",
+    "different": [
+      {
+        "title": "Ein Markt zwischen Spielern",
+        "text": "Spieler kaufen Anteile an den Fabriken anderer und werden bezahlt, wenn diese produzieren. Die Wirtschaft machen sie selbst, kein Bot."
+      },
+      {
+        "title": "Raster mit Synergien",
+        "text": "Maschinen stehen auf einem Raster, und volle Reihen geben einen Bonus. Es ist nicht nur Zahlen stapeln."
+      },
+      {
+        "title": "30 Themes",
+        "text": "Jeder Spieler entscheidet, wie seine Fabrik aussieht — aus 30 Paletten."
+      }
+    ],
+    "assetsTitle": "Material",
+    "assetsText": "Aktuelle Screenshots, Icon in hoher Auflösung und Logo: kurz per Mail fragen, wir schicken sie am selben Tag. Lieber die aktuelle Version als eine alte veröffentlicht.",
+    "contactTitle": "Kontakt",
+    "contactText": "Für Presse, Kooperationen oder einen Review-Key:",
+    "backHome": "Zurück zur Startseite"
+  },
+  "legalMeta": {
+    "privacy": {
+      "title": "Datenschutz — Tap & Build",
+      "description": "Welche Daten Tap & Build verarbeitet, was wir nicht tun und wie du sie löschen lässt."
+    },
+    "terms": {
+      "title": "Nutzungsbedingungen — Tap & Build",
+      "description": "Die Bedingungen, die beim Spielen von Tap & Build gelten."
+    },
+    "deletion": {
+      "title": "Daten löschen — Tap & Build",
+      "description": "Wie du die Löschung deiner Tap-&-Build-Daten beantragst."
+    }
+  }
+}
