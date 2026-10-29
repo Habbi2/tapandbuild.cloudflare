@@ -1,0 +1,198 @@
+{
+  "lang": "en",
+  "path": "/",
+  "meta": {
+    "title": "Tap & Build: idle factory game for Android",
+    "description": "Tap, build and automate your factory. A free idle factory game for Android with offline progress, prestige and a market where you invest in other players."
+  },
+  "nav": {
+    "how": "How it plays",
+    "themes": "Themes",
+    "press": "Press",
+    "download": "Download",
+    "themeButton": "Change theme",
+    "language": "Español"
+  },
+  "hero": {
+    "eyebrow": "Idle factory · Android",
+    "title": [
+      "Tap.",
+      "Build.",
+      "Unwind."
+    ],
+    "lead": "You start with one conveyor belt and end up with a factory that never sleeps. Free, no sign-up, and it keeps producing while you're away.",
+    "cta": "Play free",
+    "ctaNote": "Android · free · offline progress",
+    "secondary": "See how it plays",
+    "facts": [
+      {
+        "value": "Offline",
+        "label": "progress while you're away"
+      },
+      {
+        "value": "{n}",
+        "label": "colour themes"
+      },
+      {
+        "value": "0",
+        "label": "sign-ups to start"
+      }
+    ]
+  },
+  "tour": {
+    "title": "The game, in four screens",
+    "tabs": [
+      {
+        "id": "tap",
+        "label": "Tap and produce",
+        "caption": "Every tap speeds the line up. When you're done tapping, managers take over."
+      },
+      {
+        "id": "grid",
+        "label": "Buy machines",
+        "caption": "You buy machines, level them up, and they produce on their own."
+      },
+      {
+        "id": "prestige",
+        "label": "Reset and ascend",
+        "caption": "Start over with permanent multipliers that never go away."
+      },
+      {
+        "id": "market",
+        "label": "Invest in players",
+        "caption": "You buy shares in real factories and get paid when they produce."
+      }
+    ]
+  },
+  "screens": {
+    "cash": "Cash",
+    "perSec": "per second",
+    "machines": "machines",
+    "managers": "managers",
+    "pace": "pace",
+    "rowBonus": "Full row · +25%",
+    "prestige": "Prestige",
+    "permanent": "permanent multiplier",
+    "ascend": "Ascend",
+    "market": "Market",
+    "shares": "2 shares owned",
+    "tap": "Tap",
+    "tabMachines": "Machines",
+    "tabUpgrades": "Upgrades",
+    "machine1": "Conveyor belt",
+    "machine2": "Assembly line",
+    "machine3": "Robotic arm",
+    "explore": "Explore",
+    "following": "Following",
+    "invest": "Invest",
+    "search": "Search players...",
+    "vault": "Vault",
+    "cps": "CPS",
+    "dur": "DUR",
+    "ret": "RET",
+    "machine4": "Warehouse",
+    "machine5": "Industrial zone"
+  },
+  "steps": {
+    "title": "How it plays",
+    "lead": "Three things, in this order. After that it runs itself.",
+    "items": [
+      {
+        "title": "Tap to start",
+        "text": "The belt produces on every tap. That's the only manual work you'll ever do."
+      },
+      {
+        "title": "Automate",
+        "text": "Buy machines and managers. The factory keeps running with the app closed."
+      },
+      {
+        "title": "Ascend",
+        "text": "Reset the factory in exchange for permanent multipliers. Every run is faster."
+      }
+    ]
+  },
+  "themesSection": {
+    "title": "The same themes as the game",
+    "lead": "The game ships {n} palettes. These eight are the most distinct. Tap one and the whole site changes with it.",
+    "note": "Four are included; the rest unlock with packs or by inviting friends.",
+    "tiers": {
+      "free": "Included",
+      "supporter": "Supporter Pack",
+      "builder": "Builder Pack",
+      "referral": "By invitation"
+    }
+  },
+  "finalCta": {
+    "title": "Your factory is waiting",
+    "text": "Free on Android. No sign-up, no endless tutorial.",
+    "cta": "Get it on Google Play"
+  },
+  "footer": {
+    "tagline": "Idle factory game for Android.",
+    "links": {
+      "press": "Press",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "deletion": "Data deletion"
+    },
+    "rights": "All rights reserved."
+  },
+  "paths": {
+    "home": "/",
+    "press": "/prensa/",
+    "privacy": "/privacy/",
+    "terms": "/terms/",
+    "deletion": "/data-deletion/"
+  },
+  "pressPage": {
+    "title": "Press",
+    "lead": "Everything you need to write about, record or cover Tap & Build. If something's missing, ask: we answer.",
+    "factsTitle": "Fact sheet",
+    "facts": [
+      {
+        "label": "Game",
+        "value": "Tap & Build: Idle Factory Tycoon"
+      },
+      {
+        "label": "Platform",
+        "value": "Android (Google Play)"
+      },
+      {
+        "label": "Price",
+        "value": "Free, with optional purchases"
+      },
+      {
+        "label": "Package",
+        "value": "com.tapandbuild.game"
+      },
+      {
+        "label": "Themes",
+        "value": "30 unlockable palettes"
+      },
+      {
+        "label": "Contact",
+        "value": "support@tapandbuild.com"
+      }
+    ],
+    "differentTitle": "What makes it different",
+    "different": [
+      {
+        "title": "A market between players",
+        "text": "Players buy shares in each other's factories and get paid when they produce. The economy is player-driven, not a bot."
+      },
+      {
+        "title": "Grid with synergies",
+        "text": "Machines go on a grid and complete rows give a bonus. It's not just stacking numbers."
+      },
+      {
+        "title": "30 themes",
+        "text": "Every player picks how their factory looks, from 30 palettes."
+      }
+    ],
+    "assetsTitle": "Assets",
+    "assetsText": "Up-to-date screenshots, high-res icon and logo: ask by email and we'll send them the same day. We'd rather send you the latest build than have an old one published.",
+    "contactTitle": "Contact",
+    "contactText": "For press, collaborations or a review key:",
+    "backHome": "Back to home"
+  }
+}

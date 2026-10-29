@@ -1,0 +1,22 @@
+{
+  "name": "tap-and-build-web",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "node scripts/check-contrast.mjs && astro build",
+    "preview": "astro preview",
+    "sync:themes": "node scripts/sync-themes.mjs",
+    "check": "node scripts/check-contrast.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "check:overflow": "node scripts/overflow.mjs",
+    "og": "python scripts/make-og.py"
+  },
+  "dependencies": {
+    "astro": "^5.6.0"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.64.1"
+  }
+}

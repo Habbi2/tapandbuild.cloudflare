@@ -1,0 +1,134 @@
+---
+import Base from '../layouts/Base.astro';
+import site from '../data/site.json';
+import { storeLink } from '../lib/links.mjs';
+
+const storeUrl = storeLink({ lang: 'es', medium: 'bio', campaign: 'link' });
+const intentUrl = `intent://details?id=${site.packageId}#Intent;scheme=market;package=com.android.vending;S.browser_fallback_url=${encodeURIComponent(storeUrl)};end`;
+
+const copy = {
+  meta: { title: 'Tap & Build', description: 'Idle factory para Android.' },
+  paths: { home: '/' },
+};
+---
+
+<Base
+  lang="es"
+  copy={copy}
+  path="/go/"
+  bare={true}
+  noindex={true}
+  title="Tap & Build — jugá gratis"
+  description="Idle factory para Android. Gratis, sin registro."
+>
+  <div class="bio">
+    <div class="bio__logo" aria-hidden="true">TB</div>
+    <h1 class="bio__title">Tap &amp; Build</h1>
+    <p class="bio__sub" data-lang-es>Idle factory · Android</p>
+    <p class="bio__sub" data-lang-en hidden>Idle factory · Android</p>
+
+    <a class="btn bio__cta" href={storeUrl} data-store data-intent={intentUrl}>
+      <span data-lang-es>Jugar gratis</span>
+      <span data-lang-en hidden>Play free</span>
+    </a>
+
+    <p class="bio__note" data-lang-es>Gratis · sin registro · progreso offline</p>
+    <p class="bio__note" data-lang-en hidden>Free · no sign-up · offline progress</p>
+
+    <a class="bio__link" href="/es/">
+      <span data-lang-es>Ver el sitio</span>
+      <span data-lang-en hidden>Visit the site</span>
+    </a>
+  </div>
+</Base>
+
+<style>
+  .bio {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 32px 24px;
+    text-align: center;
+  }
+
+  .bio__logo {
+    width: 76px;
+    height: 76px;
+    border-radius: 20px;
+    background: var(--primary);
+    color: var(--on-primary);
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+    font-size: 26px;
+    border: 2px solid color-mix(in oklab, var(--text) 30%, transparent);
+    box-shadow: 4px 4px 0 -1px color-mix(in oklab, var(--text) 22%, transparent);
+    margin-bottom: 6px;
+  }
+
+  .bio__title {
+    font-size: 34px;
+    letter-spacing: -0.04em;
+  }
+
+  .bio__sub {
+    color: var(--muted);
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .bio__cta {
+    width: min(340px, 100%);
+    margin-top: 18px;
+    padding: 20px 26px;
+    font-size: 18px;
+  }
+
+  .bio__note {
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+
+  .bio__link {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--action);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>
+
+<script>
+  // Idioma por navegador. El contenido está en el HTML: funciona sin JS igual.
+  const es = (navigator.language || 'es').toLowerCase().startsWith('es');
+  document.querySelectorAll('[data-lang-es]').forEach((el) => (el.hidden = !es));
+  document.querySelectorAll('[data-lang-en]').forEach((el) => (el.hidden = es));
+
+  // Código de invitación: /invite/ABC123 o /go?c=ABC123
+  const match = location.pathname.match(/\/invite\/([^/?#]+)/);
+  const code = match ? decodeURIComponent(match[1]) : new URLSearchParams(location.search).get('c');
+  if (code) {
+    document.querySelectorAll('a[data-store]').forEach((a) => {
+      const url = new URL(a.getAttribute('href'), location.origin);
+      url.searchParams.set('referrer', `utm_source=website&utm_medium=bio&utm_campaign=invite&utm_content=${encodeURIComponent(code)}`);
+      const https = url.toString();
+      a.setAttribute('href', https);
+      if (a.dataset.intent) {
+        a.dataset.intent = a.dataset.intent.replace(
+          /S\.browser_fallback_url=[^;]+;/,
+          `S.browser_fallback_url=${encodeURIComponent(https)};`
+        );
+      }
+    });
+  }
+
+  // Android: abre la Play Store app, no una pestaña de Chrome.
+  if (/Android/i.test(navigator.userAgent)) {
+    document.querySelectorAll('a[data-intent]').forEach((a) => {
+      a.setAttribute('href', a.dataset.intent);
+    });
+  }
+</script>

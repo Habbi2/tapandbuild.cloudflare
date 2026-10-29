@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import copy from '../../data/copy/es.json';
+import body from '../../content/legal/es/data-deletion.html?raw';
+---
+
+<Base lang="es" copy={copy} path="/es/borrado-de-datos/" title="Borrado de datos — Tap & Build" description="Cómo pedir el borrado de tus datos en Tap & Build." altPath="/data-deletion/">
+  <div class="wrap">
+    <article class="legal" set:html={body} />
+  </div>
+</Base>

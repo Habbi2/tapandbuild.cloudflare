@@ -1,0 +1,198 @@
+{
+  "lang": "es",
+  "path": "/es/",
+  "meta": {
+    "title": "Tap & Build: idle de fábrica para Android",
+    "description": "Tocá, construí y automatizá tu fábrica. Idle de fábrica gratis para Android, con progreso offline, prestigio y un mercado donde invertís en otros jugadores."
+  },
+  "nav": {
+    "how": "Cómo se juega",
+    "themes": "Temas",
+    "press": "Prensa",
+    "download": "Descargar",
+    "themeButton": "Cambiar tema",
+    "language": "English"
+  },
+  "hero": {
+    "eyebrow": "Idle de fábrica · Android",
+    "title": [
+      "Tocá.",
+      "Construí.",
+      "Relajate."
+    ],
+    "lead": "Empezás con una cinta transportadora y terminás con una fábrica que no duerme. Gratis, sin registro, y sigue produciendo mientras no estás.",
+    "cta": "Jugar gratis",
+    "ctaNote": "Android · gratis · progreso offline",
+    "secondary": "Ver cómo se juega",
+    "facts": [
+      {
+        "value": "Offline",
+        "label": "progreso mientras no jugás"
+      },
+      {
+        "value": "{n}",
+        "label": "temas de color"
+      },
+      {
+        "value": "0",
+        "label": "registros para empezar"
+      }
+    ]
+  },
+  "tour": {
+    "title": "El juego, en cuatro pantallas",
+    "tabs": [
+      {
+        "id": "tap",
+        "label": "Tocá para producir",
+        "caption": "Cada toque acelera la línea. Cuando te cansás, los gerentes la automatizan."
+      },
+      {
+        "id": "grid",
+        "label": "Comprá máquinas",
+        "caption": "Comprás máquinas, las subís de nivel y producen solas."
+      },
+      {
+        "id": "prestige",
+        "label": "Reiniciá y ascendé",
+        "caption": "Volvés a empezar con multiplicadores permanentes que no se pierden."
+      },
+      {
+        "id": "market",
+        "label": "Invertí en jugadores",
+        "caption": "Comprás acciones de fábricas reales y cobrás cuando producen."
+      }
+    ]
+  },
+  "screens": {
+    "cash": "Caja",
+    "perSec": "por segundo",
+    "machines": "máquinas",
+    "managers": "gerentes",
+    "pace": "ritmo",
+    "rowBonus": "Fila completa · +25%",
+    "prestige": "Prestigio",
+    "permanent": "multiplicador permanente",
+    "ascend": "Ascender",
+    "market": "Mercado",
+    "shares": "2 acciones tuyas",
+    "tap": "Tocar",
+    "tabMachines": "Máquinas",
+    "tabUpgrades": "Mejoras",
+    "machine1": "Cinta transportadora",
+    "machine2": "Línea de ensamblaje",
+    "machine3": "Brazo robótico",
+    "explore": "Explorador",
+    "following": "Seguimiento",
+    "invest": "Invertir",
+    "search": "Buscar jugadores...",
+    "vault": "Vault",
+    "cps": "CPS",
+    "dur": "DUR",
+    "ret": "RET",
+    "machine4": "Almacén",
+    "machine5": "Zona industrial"
+  },
+  "steps": {
+    "title": "Cómo se juega",
+    "lead": "Tres cosas, en este orden. Después se juega solo.",
+    "items": [
+      {
+        "title": "Tocá para arrancar",
+        "text": "La cinta produce con cada toque. Ese es el único trabajo manual que vas a tener."
+      },
+      {
+        "title": "Automatizá",
+        "text": "Comprás máquinas y gerentes. La fábrica sigue produciendo con la app cerrada."
+      },
+      {
+        "title": "Ascendé",
+        "text": "Reiniciás la fábrica a cambio de multiplicadores permanentes. Cada vuelta es más rápida."
+      }
+    ]
+  },
+  "themesSection": {
+    "title": "Los mismos temas del juego",
+    "lead": "El juego tiene {n} paletas. Estas ocho son las que más se diferencian. Tocá una y el sitio entero cambia con ella.",
+    "note": "Cuatro vienen incluidas; el resto se desbloquea con los packs o invitando amigos.",
+    "tiers": {
+      "free": "Incluido",
+      "supporter": "Supporter Pack",
+      "builder": "Builder Pack",
+      "referral": "Por invitación"
+    }
+  },
+  "finalCta": {
+    "title": "Tu fábrica te está esperando",
+    "text": "Gratis en Android. Sin registro, sin tutorial eterno.",
+    "cta": "Descargar en Google Play"
+  },
+  "footer": {
+    "tagline": "Idle de fábrica para Android.",
+    "links": {
+      "press": "Prensa",
+      "privacy": "Privacidad",
+      "terms": "Términos",
+      "deletion": "Borrado de datos"
+    },
+    "rights": "Todos los derechos reservados."
+  },
+  "paths": {
+    "home": "/es/",
+    "press": "/es/prensa/",
+    "privacy": "/es/privacidad/",
+    "terms": "/es/terminos/",
+    "deletion": "/es/borrado-de-datos/"
+  },
+  "pressPage": {
+    "title": "Prensa",
+    "lead": "Todo lo que necesitás para escribir, grabar o cubrir Tap & Build. Si te falta algo, pedilo: contestamos.",
+    "factsTitle": "Ficha técnica",
+    "facts": [
+      {
+        "label": "Juego",
+        "value": "Tap & Build: Idle Factory Tycoon"
+      },
+      {
+        "label": "Plataforma",
+        "value": "Android (Google Play)"
+      },
+      {
+        "label": "Precio",
+        "value": "Gratis, con compras opcionales"
+      },
+      {
+        "label": "Paquete",
+        "value": "com.tapandbuild.game"
+      },
+      {
+        "label": "Temas",
+        "value": "30 paletas desbloqueables"
+      },
+      {
+        "label": "Contacto",
+        "value": "support@tapandbuild.com"
+      }
+    ],
+    "differentTitle": "Qué lo hace distinto",
+    "different": [
+      {
+        "title": "Un mercado entre jugadores",
+        "text": "Los jugadores compran acciones de las fábricas de otros y cobran cuando producen. La economía la mueven ellos, no un bot."
+      },
+      {
+        "title": "Grilla con sinergias",
+        "text": "Las máquinas se ubican en una grilla y las filas completas dan bonificación. No es sólo acumular."
+      },
+      {
+        "title": "30 temas",
+        "text": "Cada jugador elige cómo se ve su fábrica, entre 30 paletas."
+      }
+    ],
+    "assetsTitle": "Material",
+    "assetsText": "Capturas actualizadas, ícono en alta y logo: pedilos por mail y te los mandamos el mismo día. Preferimos mandarte la última versión antes que dejes una vieja publicada.",
+    "contactTitle": "Contacto",
+    "contactText": "Para prensa, colaboraciones o una clave de reseña:",
+    "backHome": "Volver al inicio"
+  }
+}

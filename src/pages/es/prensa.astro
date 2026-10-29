@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/Base.astro';
+import PressBody from '../../components/PressBody.astro';
+import copy from '../../data/copy/es.json';
+---
+
+<Base
+  lang="es"
+  copy={copy}
+  path={copy.paths.press}
+  title="Prensa — Tap & Build"
+  description="Ficha técnica, contacto y material de prensa de Tap & Build, el idle de fábrica para Android."
+ ogImage="/og/press.png">
+  <PressBody copy={copy} lang="es" />
+</Base>

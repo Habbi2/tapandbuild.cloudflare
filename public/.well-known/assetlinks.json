@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.tapandbuild.game",
+      "sha256_cert_fingerprints": [
+        "65:71:BA:B0:54:4F:74:D7:52:B0:09:3E:86:47:91:F7:8A:15:82:C9:8B:78:ED:68:8A:81:AB:F9:4F:15:8F:D7"
+      ]
+    }
+  }
+]

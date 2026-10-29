@@ -1,0 +1,33 @@
+---
+import site from '../data/site.json';
+
+const { copy, lang } = Astro.props;
+const base = copy.paths.home;
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__inner">
+      <div>
+        <a class="brand" href={base}>
+          <span class="brand__mark" aria-hidden="true">TB</span>
+          <span>Tap &amp; Build</span>
+        </a>
+        <p style="color: var(--muted); font-size: 14px; margin-top: 10px;">{copy.footer.tagline}</p>
+      </div>
+
+      <nav class="footer__links" aria-label="Legal">
+        <a href={copy.paths.press}>{copy.footer.links.press}</a>
+        <a href={copy.paths.privacy}>{copy.footer.links.privacy}</a>
+        <a href={copy.paths.terms}>{copy.footer.links.terms}</a>
+        <a href={copy.paths.deletion}>{copy.footer.links.deletion}</a>
+      </nav>
+    </div>
+
+    <div class="footer__legal">
+      <span>© {year} {site.name}. {copy.footer.rights}</span>
+      <span>{site.domain}</span>
+    </div>
+  </div>
+</footer>

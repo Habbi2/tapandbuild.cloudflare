@@ -1,0 +1,216 @@
+---
+const { copy } = Astro.props;
+const s = copy.screens;
+const tabs = copy.tour.tabs;
+const plant = s.machine1 === 'Cinta transportadora' ? 'Planta de fábrica' : 'Factory plant';
+---
+
+<div class="tour">
+  <div class="device">
+    <div class="device__notch" aria-hidden="true"></div>
+    <div class="device__screen" role="img" aria-label={copy.tour.title}>
+      <!-- 1. Tocar -->
+      <div class="screen is-active" id="panel-tap" role="tabpanel" data-panel="tap">
+        <div class="scr-top">
+          <span class="scr-label">{s.cash}</span>
+          <span class="scr-value">$3,24 Md</span>
+        </div>
+        <span class="scr-rate">+2,4 K / s</span>
+
+        <div class="tap-zone">
+          <div class="tap-btn" aria-hidden="true">{s.tap}</div>
+        </div>
+
+        <div class="scr-cards">
+          <div class="mini"><b>12</b><span>{s.machines}</span></div>
+          <div class="mini"><b>4</b><span>{s.managers}</span></div>
+          <div class="mini"><b>x1,8</b><span>{s.pace}</span></div>
+        </div>
+      </div>
+
+      <!-- 2. Máquinas -->
+      <div class="screen" id="panel-grid" role="tabpanel" data-panel="grid">
+        <div class="scr-top">
+          <span class="scr-label">{s.cash}</span>
+          <span class="scr-value">$4,10 Md</span>
+        </div>
+        <span class="scr-rate">+3,1 K / s</span>
+
+        <div class="seg" aria-hidden="true">
+          <span class="seg__on">{s.tabMachines}</span>
+          <span>{s.tabUpgrades}</span>
+        </div>
+
+        <ul class="shop" aria-hidden="true">
+          <li>
+            <span class="shop__ico">📦</span>
+            <span class="shop__name">{s.machine1}</span>
+            <span class="shop__lv">×3</span>
+            <span class="shop__buy">24,7</span>
+          </li>
+          <li>
+            <span class="shop__ico">🔧</span>
+            <span class="shop__name">{s.machine2}</span>
+            <span class="shop__lv">×8</span>
+            <span class="shop__buy">210</span>
+          </li>
+          <li>
+            <span class="shop__ico">🦾</span>
+            <span class="shop__name">{s.machine3}</span>
+            <span class="shop__lv">×2</span>
+            <span class="shop__buy">1,1 K</span>
+          </li>
+          <li>
+            <span class="shop__ico">🏭</span>
+            <span class="shop__name">{plant}</span>
+            <span class="shop__lv">×1</span>
+            <span class="shop__buy">12 K</span>
+          </li>
+          <li>
+            <span class="shop__ico">🏗️</span>
+            <span class="shop__name">{s.machine4}</span>
+            <span class="shop__lv">×0</span>
+            <span class="shop__buy">130 K</span>
+          </li>
+          <li>
+            <span class="shop__ico">⚡</span>
+            <span class="shop__name">{s.machine5}</span>
+            <span class="shop__lv">×0</span>
+            <span class="shop__buy">1,4 M</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 3. Prestigio -->
+      <div class="screen" id="panel-prestige" role="tabpanel" data-panel="prestige">
+        <div class="scr-top">
+          <span class="scr-label">{s.prestige}</span>
+          <span class="scr-value">x2,4</span>
+        </div>
+
+        <div class="prestige-card">
+          <span class="prestige-mult">x2,4</span>
+          <span class="prestige-label">{s.permanent}</span>
+        </div>
+
+        <div class="bar" aria-hidden="true"><i style="width:68%"></i></div>
+        <span class="scr-label" style="text-align:right">68%</span>
+
+        <div style="margin-top:auto">
+          <div class="scr-btn" aria-hidden="true">{s.ascend}</div>
+        </div>
+      </div>
+
+      <!-- 4. Mercado -->
+      <div class="screen" id="panel-market" role="tabpanel" data-panel="market">
+        <div class="scr-top">
+          <span class="scr-label">{s.market}</span>
+          <span class="scr-value">$21,37</span>
+        </div>
+
+        <div class="seg" aria-hidden="true">
+          <span class="seg__on">{s.explore}</span>
+          <span>{s.following}</span>
+        </div>
+
+        <div class="mkt-search" aria-hidden="true">{s.search}</div>
+
+        <div class="mkt-card" aria-hidden="true">
+          <div class="mkt-head">
+            <span class="mkt-ava">🚀</span>
+            <b>mana</b>
+            <span class="mkt-dot"></span>
+          </div>
+          <div class="mkt-stats">
+            <div><b>5,59 K</b><span>{s.cps}</span></div>
+            <div><b>4h</b><span>{s.dur}</span></div>
+            <div><b>20x</b><span>{s.ret}</span></div>
+          </div>
+          <div class="mkt-btn">{s.invest}</div>
+        </div>
+
+        <div class="mkt-card" aria-hidden="true">
+          <div class="mkt-head">
+            <span class="mkt-ava">🛠️</span>
+            <b>kiro</b>
+            <span class="mkt-dot"></span>
+          </div>
+          <div class="mkt-stats">
+            <div><b>6,27 K</b><span>{s.cps}</span></div>
+            <div><b>4h</b><span>{s.dur}</span></div>
+            <div><b>20x</b><span>{s.ret}</span></div>
+          </div>
+          <div class="mkt-btn">{s.invest}</div>
+        </div>
+
+        <div class="mkt-card" aria-hidden="true">
+          <div class="mkt-head">
+            <span class="mkt-ava">🧭</span>
+            <b>mozz</b>
+            <span class="mkt-dot"></span>
+          </div>
+          <div class="mkt-stats">
+            <div><b>3,80 K</b><span>{s.cps}</span></div>
+            <div><b>4h</b><span>{s.dur}</span></div>
+            <div><b>20x</b><span>{s.ret}</span></div>
+          </div>
+          <div class="mkt-btn">{s.invest}</div>
+        </div>
+      </div>
+
+      <div class="device__tabs" aria-hidden="true">
+        <span class="on">🏭</span><span>⚙️</span><span>📈</span><span>⭐</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="tour__tabs" role="tablist" aria-label={copy.tour.title}>
+    {tabs.map((tab, index) => (
+      <button
+        class="tour__tab"
+        type="button"
+        role="tab"
+        data-tab={tab.id}
+        aria-selected={index === 0 ? 'true' : 'false'}
+        aria-controls={`panel-${tab.id}`}
+        tabindex={index === 0 ? 0 : -1}
+      >
+        {tab.label}
+      </button>
+    ))}
+  </div>
+
+  <p class="tour__caption" data-caption aria-live="polite">{tabs[0].caption}</p>
+</div>
+
+<script type="application/json" id="tour-data" set:html={JSON.stringify(Object.fromEntries(tabs.map((t) => [t.id, t.caption])))}></script>
+
+<script>
+  const tabs = [...document.querySelectorAll('[data-tab]')];
+  const panels = [...document.querySelectorAll('[data-panel]')];
+  const captions = JSON.parse(document.getElementById('tour-data')?.textContent || '{}');
+  const captionEl = document.querySelector('[data-caption]');
+
+  function select(id) {
+    tabs.forEach((tab) => {
+      const active = tab.dataset.tab === id;
+      tab.setAttribute('aria-selected', String(active));
+      tab.tabIndex = active ? 0 : -1;
+    });
+    panels.forEach((panel) => panel.classList.toggle('is-active', panel.dataset.panel === id));
+    if (captionEl && captions[id]) captionEl.textContent = captions[id];
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => select(tab.dataset.tab));
+    tab.addEventListener('keydown', (event) => {
+      const index = tabs.indexOf(tab);
+      if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+        event.preventDefault();
+        const next = tabs[(index + (event.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+        next.focus();
+        select(next.dataset.tab);
+      }
+    });
+  });
+</script>

@@ -1,0 +1,67 @@
+---
+import Device from './Device.astro';
+import ThemeGallery from './ThemeGallery.astro';
+import CtaBand from './CtaBand.astro';
+import themesData from '../data/themes.json';
+import { storeLink } from '../lib/links.mjs';
+
+const { copy, lang } = Astro.props;
+const total = themesData.totalInGame;
+const heroCta = storeLink({ lang, medium: 'hero', campaign: 'home' });
+---
+
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow">{copy.hero.eyebrow}</p>
+
+      <h1 class="hero__title">
+        {copy.hero.title.map((line) => <span>{line}</span>)}
+      </h1>
+
+      <p class="hero__lead">{copy.hero.lead}</p>
+
+      <div class="hero__actions">
+        <a class="btn" href={heroCta} data-store>{copy.hero.cta}</a>
+        <a class="btn btn--ghost" href="#juego">{copy.hero.secondary}</a>
+      </div>
+
+      <p class="hero__note">{copy.hero.ctaNote}</p>
+
+      <div class="hero__facts">
+        {copy.hero.facts.map((fact) => (
+          <div class="fact">
+            <b>{fact.value.replace('{n}', String(total))}</b>
+            <span>{fact.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div id="juego">
+      <Device copy={copy} />
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="como-se-juega">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 class="section__title" id="como-se-juega">{copy.steps.title}</h2>
+      <p class="section__lead">{copy.steps.lead}</p>
+    </div>
+
+    <div class="steps">
+      {copy.steps.items.map((item) => (
+        <article class="step">
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<ThemeGallery copy={copy} />
+
+<CtaBand copy={copy} lang={lang} />

@@ -1,0 +1,18 @@
+---
+import { storeLink } from '../lib/links.mjs';
+
+const { copy, lang } = Astro.props;
+const href = storeLink({ lang, medium: 'cta-band', campaign: 'home' });
+---
+
+<section class="section" style="border-top: none; padding-bottom: 0;">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>{copy.finalCta.title}</h2>
+        <p>{copy.finalCta.text}</p>
+      </div>
+      <a class="btn" href={href} data-store>{copy.finalCta.cta}</a>
+    </div>
+  </div>
+</section>

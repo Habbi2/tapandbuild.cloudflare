@@ -1,0 +1,110 @@
+---
+import '../styles/global.css';
+import '../styles/themes.css';
+import site from '../data/site.json';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const {
+  lang,
+  copy,
+  path = copy.path,
+  title = copy.meta.title,
+  description = copy.meta.description,
+  bare = false,
+  noindex = false,
+  altPath: altPathProp,
+  ogImage: ogImageProp = '/og.png',
+} = Astro.props;
+
+const origin = `https://${site.domain}`;
+const canonical = new URL(path, origin).href;
+
+// Camino equivalente en el otro idioma: /es/prensa <-> /prensa
+const altLang = lang === 'es' ? 'en' : 'es';
+const defaultAlt =
+  lang === 'es'
+    ? path.replace(/^\/es/, '') || '/'
+    : path === '/'
+      ? '/es/'
+      : `/es${path}`;
+// `altPath={null}` omite el hreflang alterno (páginas sin par traducido).
+const altPath = altPathProp === undefined ? defaultAlt : altPathProp;
+const altUrl = altPath ? new URL(altPath, origin).href : null;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: site.name,
+  alternateName: site.tagline,
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'Android',
+  url: `${origin}/`,
+  installUrl: site.storeUrl,
+  inLanguage: lang,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+};
+
+const ogImage = new URL(ogImageProp, origin).href;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+
+    <link rel="alternate" hreflang={lang} href={canonical} />
+    {altUrl && <link rel="alternate" hreflang={altLang} href={altUrl} />}
+    <link rel="alternate" hreflang="x-default" href={lang === 'en' ? canonical : (altUrl ?? canonical)} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:image" content={ogImage} />
+    <meta property="og:locale" content={lang === 'es' ? 'es_AR' : 'en_US'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <meta name="theme-color" content="#FCF5ED" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Evita el flash de tema: aplica el guardado antes de pintar. -->
+    <script is:inline>
+      (function () {
+        try {
+          // ?theme=slug permite preview y links con tema fijo.
+          var fromUrl = new URLSearchParams(location.search).get('theme');
+          var saved = localStorage.getItem('tb-theme');
+          if (fromUrl) {
+            document.documentElement.dataset.theme = fromUrl;
+            localStorage.setItem('tb-theme', fromUrl);
+          } else if (saved) {
+            document.documentElement.dataset.theme = saved;
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#contenido">{lang === 'es' ? 'Saltear al contenido' : 'Skip to content'}</a>
+    {!bare && <Nav copy={copy} lang={lang} altPath={altPath} />}
+    <main id="contenido">
+      <slot />
+    </main>
+    {!bare && <Footer copy={copy} lang={lang} />}
+  </body>
+</html>

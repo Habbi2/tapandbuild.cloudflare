@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import copy from '../../data/copy/es.json';
+import body from '../../content/legal/es/privacy.html?raw';
+---
+
+<Base lang="es" copy={copy} path="/es/privacidad/" title="Política de privacidad — Tap & Build" description="Cómo tratamos tus datos en Tap & Build." altPath="/privacy/">
+  <div class="wrap">
+    <article class="legal" set:html={body} />
+  </div>
+</Base>

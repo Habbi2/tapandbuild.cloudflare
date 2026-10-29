@@ -1,0 +1,46 @@
+---
+import themesData from '../data/themes.json';
+import { buildTokens } from '../lib/tokens.mjs';
+
+const { copy } = Astro.props;
+const total = themesData.totalInGame;
+
+const cards = themesData.themes.map((theme) => {
+  const { tokens } = buildTokens(theme);
+  return {
+    slug: theme.slug,
+    name: theme.name,
+    tier: theme.tier,
+    style: `--chip-bg:${tokens.bg};--chip-primary:${tokens.primary};--chip-surface:${tokens.surface}`,
+  };
+});
+---
+
+<section class="section" id="temas">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 class="section__title">{copy.themesSection.title}</h2>
+      <p class="section__lead">{copy.themesSection.lead.replace('{n}', String(total))}</p>
+    </div>
+
+    <div class="theme-grid">
+      {cards.map((card) => (
+        <button
+          class="theme-card"
+          type="button"
+          data-theme-set={card.slug}
+          aria-pressed="false"
+          style={card.style}
+        >
+          <span class="theme-card__swatch" aria-hidden="true"></span>
+          <span class="theme-card__name">
+            <span>{card.name}</span>
+            <span class="theme-card__tier">{copy.themesSection.tiers[card.tier]}</span>
+          </span>
+        </button>
+      ))}
+    </div>
+
+    <p class="themes__note">{copy.themesSection.note}</p>
+  </div>
+</section>
