@@ -23,20 +23,21 @@ const locale = localeMeta(lang);
 
 const legalSlug = { privacy: 'privacy', terms: 'terms', deletion: 'data-deletion' }[pageKey];
 
-const titles = {
-  press: () =>
-    lang === 'en'
-      ? 'Press kit — Tap & Build'
-      : lang === 'es'
-        ? 'Prensa — Tap & Build'
-        : lang === 'de'
-          ? 'Presse — Tap & Build'
-          : lang === 'ru'
-            ? 'Пресса — Tap & Build'
-            : 'Imprensa — Tap & Build',
+const pressTitles = {
+  en: 'Press kit — Tap & Build',
+  es: 'Prensa — Tap & Build',
+  de: 'Presse — Tap & Build',
+  ru: 'Пресса — Tap & Build',
+  pt: 'Imprensa — Tap & Build',
 };
 
 const meta = legalSlug ? copy.legalMeta[pageKey] : null;
+
+// El título depende de la página: sólo prensa usa el suyo.
+const title =
+  meta?.title ?? (pageKey === 'press' ? pressTitles[lang] : copy.meta.title);
+const description =
+  meta?.description ?? (pageKey === 'press' ? copy.pressPage.description : copy.meta.description);
 
 // OG por página: home de cada idioma, prensa propia, legales genérica.
 const ogImage =
@@ -45,8 +46,6 @@ const ogImage =
     : pageKey === 'press'
       ? '/og/press.png'
       : '/og.png';
-const title = meta?.title ?? titles.press?.() ?? copy.meta.title;
-const description = meta?.description ?? copy.meta.description;
 ---
 
 <Base lang={lang} copy={copy} pageKey={pageKey} title={title} description={description} ogImage={ogImage}>

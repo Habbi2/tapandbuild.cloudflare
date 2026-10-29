@@ -16,15 +16,28 @@
   },
   "hero": {
     "eyebrow": "Idle de fábrica · Android",
-    "title": ["Toque.", "Construa.", "Relaxe."],
+    "title": [
+      "Toque.",
+      "Construa.",
+      "Relaxe."
+    ],
     "lead": "Você começa com uma esteira e termina com uma fábrica que não dorme. Grátis, sem cadastro, e continua produzindo enquanto você está fora.",
     "cta": "Jogar grátis",
     "ctaNote": "Android · grátis · progresso offline",
     "secondary": "Ver como se joga",
     "facts": [
-      { "value": "Offline", "label": "progresso enquanto você não joga" },
-      { "value": "{n}", "label": "temas de cor" },
-      { "value": "0", "label": "cadastros para começar" }
+      {
+        "value": "Offline",
+        "label": "progresso enquanto você não joga"
+      },
+      {
+        "value": "{n}",
+        "label": "temas de cor"
+      },
+      {
+        "value": "0",
+        "label": "cadastros para começar"
+      }
     ]
   },
   "tour": {
@@ -130,12 +143,30 @@
     "lead": "Tudo o que você precisa para escrever, gravar ou cobrir Tap & Build. Se faltar algo, peça: a gente responde.",
     "factsTitle": "Ficha técnica",
     "facts": [
-      { "label": "Jogo", "value": "Tap & Build: Idle Factory Tycoon" },
-      { "label": "Plataforma", "value": "Android (Google Play)" },
-      { "label": "Preço", "value": "Grátis, com compras opcionais" },
-      { "label": "Pacote", "value": "com.tapandbuild.game" },
-      { "label": "Temas", "value": "30 paletas desbloqueáveis" },
-      { "label": "Contato", "value": "support@tapandbuild.com" }
+      {
+        "label": "Jogo",
+        "value": "Tap & Build: Idle Factory Tycoon"
+      },
+      {
+        "label": "Plataforma",
+        "value": "Android (Google Play)"
+      },
+      {
+        "label": "Preço",
+        "value": "Grátis, com compras opcionais"
+      },
+      {
+        "label": "Pacote",
+        "value": "com.tapandbuild.game"
+      },
+      {
+        "label": "Temas",
+        "value": "30 paletas desbloqueáveis"
+      },
+      {
+        "label": "Contato",
+        "value": "support@tapandbuild.com"
+      }
     ],
     "differentTitle": "O que ele tem de diferente",
     "different": [
@@ -156,7 +187,8 @@
     "assetsText": "Capturas atualizadas, ícone em alta e logo: peça por e-mail e mandamos no mesmo dia. Preferimos mandar a versão mais nova a deixar uma antiga publicada.",
     "contactTitle": "Contato",
     "contactText": "Para imprensa, colaborações ou uma chave de análise:",
-    "backHome": "Voltar ao início"
+    "backHome": "Voltar ao início",
+    "description": "Ficha técnica, contato e material de imprensa do Tap & Build, o idle de fábrica para Android."
   },
   "legalMeta": {
     "privacy": {

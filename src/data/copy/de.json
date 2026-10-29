@@ -16,15 +16,28 @@
   },
   "hero": {
     "eyebrow": "Idle-Fabrik · Android",
-    "title": ["Tippen.", "Bauen.", "Entspannen."],
+    "title": [
+      "Tippen.",
+      "Bauen.",
+      "Entspannen."
+    ],
     "lead": "Du fängst mit einem Förderband an und endest mit einer Fabrik, die nie schläft. Kostenlos, ohne Anmeldung, und sie produziert weiter, während du weg bist.",
     "cta": "Gratis spielen",
     "ctaNote": "Android · kostenlos · Offline-Fortschritt",
     "secondary": "So wird gespielt",
     "facts": [
-      { "value": "Offline", "label": "Fortschritt, während du weg bist" },
-      { "value": "{n}", "label": "Farbschemata" },
-      { "value": "0", "label": "Anmeldungen nötig" }
+      {
+        "value": "Offline",
+        "label": "Fortschritt, während du weg bist"
+      },
+      {
+        "value": "{n}",
+        "label": "Farbschemata"
+      },
+      {
+        "value": "0",
+        "label": "Anmeldungen nötig"
+      }
     ]
   },
   "tour": {
@@ -130,12 +143,30 @@
     "lead": "Alles, was du zum Schreiben, Aufnehmen oder Berichten über Tap & Build brauchst. Wenn etwas fehlt: frag uns, wir antworten.",
     "factsTitle": "Fakten",
     "facts": [
-      { "label": "Spiel", "value": "Tap & Build: Idle Factory Tycoon" },
-      { "label": "Plattform", "value": "Android (Google Play)" },
-      { "label": "Preis", "value": "Kostenlos, mit optionalen Käufen" },
-      { "label": "Paket", "value": "com.tapandbuild.game" },
-      { "label": "Themes", "value": "30 freischaltbare Paletten" },
-      { "label": "Kontakt", "value": "support@tapandbuild.com" }
+      {
+        "label": "Spiel",
+        "value": "Tap & Build: Idle Factory Tycoon"
+      },
+      {
+        "label": "Plattform",
+        "value": "Android (Google Play)"
+      },
+      {
+        "label": "Preis",
+        "value": "Kostenlos, mit optionalen Käufen"
+      },
+      {
+        "label": "Paket",
+        "value": "com.tapandbuild.game"
+      },
+      {
+        "label": "Themes",
+        "value": "30 freischaltbare Paletten"
+      },
+      {
+        "label": "Kontakt",
+        "value": "support@tapandbuild.com"
+      }
     ],
     "differentTitle": "Was es anders macht",
     "different": [
@@ -156,7 +187,8 @@
     "assetsText": "Aktuelle Screenshots, Icon in hoher Auflösung und Logo: kurz per Mail fragen, wir schicken sie am selben Tag. Lieber die aktuelle Version als eine alte veröffentlicht.",
     "contactTitle": "Kontakt",
     "contactText": "Für Presse, Kooperationen oder einen Review-Key:",
-    "backHome": "Zurück zur Startseite"
+    "backHome": "Zurück zur Startseite",
+    "description": "Fakten, Kontakt und Material für die Presse zu Tap & Build, dem Idle-Fabrikspiel für Android."
   },
   "legalMeta": {
     "privacy": {
