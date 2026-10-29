@@ -923,12 +923,12 @@ svg {
   transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease);
 }
 
-.step:hover {
+.steps .step:hover {
   transform: translateY(-3px);
   box-shadow: var(--hard);
 }
 
-.step::before {
+.steps .step::before {
   content: counter(step, decimal-leading-zero);
   display: block;
   font-size: 12px;

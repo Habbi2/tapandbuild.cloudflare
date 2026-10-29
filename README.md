@@ -79,8 +79,8 @@ EN (raíz), ES, DE, RU y PT-BR. Las rutas viven en `src/data/routes.json`: agreg
 es sumar su código a `locales.json`, su entrada en `routes.json` y un `src/data/copy/xx.json`.
 El hreflang, el canonical y el selector de idioma salen de ahí solos.
 
-DE tiene las legales traducidas. RU y PT las muestran en inglés con un aviso de cuál es la
-versión vinculante (pendiente de traducir si el mercado lo justifica).
+Los cinco idiomas tienen las legales traducidas. Si algún día falta una traducción, el
+componente `LegalBody` cae al inglés y muestra un aviso automático con `notice.html`.
 
 Para agregar un tema: sumarlo a `SELECTION` en `sync-themes.mjs`, correr
 `npm run sync:themes && npm run check`, y si pasa AA aparece solo en el switcher y la galería.
