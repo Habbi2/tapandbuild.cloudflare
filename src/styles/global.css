@@ -279,6 +279,10 @@ svg {
    -------------------------------------------------------------------------- */
 
 .theme-wrap {
+  position: static;
+}
+
+.nav__inner {
   position: relative;
 }
 
@@ -1403,4 +1407,73 @@ svg {
 
 .legal-notice p {
   margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Popovers en mobile: panel de ancho completo bajo la barra
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 880px) {
+  .theme-pop {
+    width: min(292px, calc(100vw - 32px));
+  }
+
+  .lang-pop {
+    width: min(232px, calc(100vw - 32px));
+  }
+}
+
+@media (max-width: 560px) {
+  .nav__inner {
+    position: relative;
+  }
+
+  .theme-wrap {
+    position: static;
+  }
+
+  .theme-pop {
+    left: 0;
+    right: 0;
+    top: calc(100% + 10px);
+    width: auto;
+    max-height: calc(100dvh - 110px);
+    overflow-y: auto;
+    padding: 16px;
+  }
+
+  .theme-pop__title {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .theme-pop__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .chip {
+    min-height: 54px;
+    border-radius: 12px;
+  }
+
+  .theme-pop__hint {
+    font-size: 13px;
+    line-height: 1.45;
+    margin-top: 14px;
+  }
+
+  .lang-list {
+    gap: 4px;
+  }
+
+  .lang-item {
+    padding: 14px 12px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+
+  .lang-item__code {
+    font-size: 11px;
+  }
 }
