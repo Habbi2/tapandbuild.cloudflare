@@ -37,11 +37,19 @@ const titles = {
 };
 
 const meta = legalSlug ? copy.legalMeta[pageKey] : null;
+
+// OG por página: home de cada idioma, prensa propia, legales genérica.
+const ogImage =
+  pageKey === 'home'
+    ? `/og/home-${lang}.png`
+    : pageKey === 'press'
+      ? '/og/press.png'
+      : '/og.png';
 const title = meta?.title ?? titles.press?.() ?? copy.meta.title;
 const description = meta?.description ?? copy.meta.description;
 ---
 
-<Base lang={lang} copy={copy} pageKey={pageKey} title={title} description={description}>
+<Base lang={lang} copy={copy} pageKey={pageKey} title={title} description={description} ogImage={ogImage}>
   {pageKey === 'home' && <Home copy={copy} lang={lang} />}
   {pageKey === 'press' && <PressBody copy={copy} lang={lang} />}
   {legalSlug && <LegalBody lang={lang} slug={legalSlug} />}

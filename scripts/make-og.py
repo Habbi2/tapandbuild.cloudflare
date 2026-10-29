@@ -44,6 +44,33 @@ CARDS = [
         "url": "tapandbuild.com",
     },
     {
+        "slug": "home-de",
+        "kicker": "IDLE-FABRIK · ANDROID",
+        "title": ("TIPPEN.", "BAUEN."),
+        "accent": "ENTSPANNEN.",
+        "sub": "Kostenlos. Ohne Anmeldung.",
+        "url": "tapandbuild.com/de",
+        "size": 88,
+    },
+    {
+        "slug": "home-ru",
+        "kicker": "IDLE-ФАБРИКА · ANDROID",
+        "title": ("ТАПАЙ.", "СТРОЙ."),
+        "accent": "ОТДЫХАЙ.",
+        "sub": "Бесплатно. Без регистрации.",
+        "url": "tapandbuild.com/ru",
+        "size": 96,
+    },
+    {
+        "slug": "home-pt",
+        "kicker": "IDLE DE FÁBRICA · ANDROID",
+        "title": ("TOQUE.", "CONSTRUA."),
+        "accent": "RELAXE.",
+        "sub": "Grátis. Sem cadastro.",
+        "url": "tapandbuild.com/pt",
+        "size": 96,
+    },
+    {
         "slug": "press",
         "kicker": "PRESS KIT",
         "title": ("PRESS", "KIT"),
@@ -78,7 +105,7 @@ def render(card):
     im = base_canvas()
     d = ImageDraw.Draw(im)
 
-    black = ImageFont.truetype(FONT_BLACK, 104)
+    black = ImageFont.truetype(FONT_BLACK, card.get("size", 104))
     small = ImageFont.truetype(FONT_BOLD, 21)
     mid = ImageFont.truetype(FONT_BOLD, 28)
     tiny = ImageFont.truetype(FONT_BOLD, 20)
@@ -89,10 +116,10 @@ def render(card):
     y = 140
     for line in card["title"]:
         d.text((56, y), line, font=black, fill=INK)
-        y += 112
+        y += card.get("size", 104) + 8
     if card["accent"]:
         d.text((56, y), card["accent"], font=black, fill=ORANGE)
-        y += 118
+        y += card.get("size", 104) + 14
 
     d.text((58, y + 14), card["sub"], font=mid, fill=MUTED)
 
