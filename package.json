@@ -12,7 +12,8 @@
     "smoke": "node scripts/smoke.mjs",
     "check:overflow": "node scripts/overflow.mjs",
     "og": "python scripts/make-og.py",
-    "deploy": "npm run build && wrangler pages deploy dist --project-name=tap-and-build --branch=main --commit-dirty=true"
+    "deploy": "npm run build && wrangler pages deploy dist --project-name=tap-and-build --branch=main --commit-dirty=true",
+    "speed": "node scripts/speed.mjs"
   },
   "dependencies": {
     "astro": "^5.6.0"
